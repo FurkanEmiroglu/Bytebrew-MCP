@@ -1,8 +1,14 @@
 package main
 
-import "github.com/mark3labs/mcp-go/mcp"
+import (
+	"github.com/mark3labs/mcp-go/mcp"
+)
 
 func CreateNewGameRegistry(input map[string]any, request *mcp.CallToolRequest) (*mcp.CallToolResult, error) {
+	return nil, nil
+}
+
+func ListGameRegistries(input map[string]any, request *mcp.CallToolRequest) (*mcp.CallToolResult, error) {
 	return nil, nil
 }
 
