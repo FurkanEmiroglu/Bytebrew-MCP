@@ -33,5 +33,5 @@ func main() {
 		panic(fmt.Sprintf("failed to migrate: %v", err))
 	}
 
-	NewSqliteGameRegistryRepository(globalDB)
+	globalGameRepository = NewSqliteGameRegistryRepository(globalDB)
 }

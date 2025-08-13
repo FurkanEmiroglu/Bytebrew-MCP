@@ -30,11 +30,18 @@ func (r *SqliteGameRepository) Delete(gameId string) error {
 	return r.db.Where("game_id = ?", gameId).Delete(&GameRegistry{}).Error
 }
 
+func (r *SqliteGameRepository) ListEntities() ([]GameRegistry, error) {
+	var games []GameRegistry
+	err := r.db.Find(&games).Error
+	return games, err
+}
+
 type Repository[T any] interface {
 	Add(item T) error
 	Get(uniqueId string) (T, error)
 	Update(item T) error
 	Delete(item T) error
+	ListEntities() ([]T, error)
 }
 
 type GameRegistry struct {
